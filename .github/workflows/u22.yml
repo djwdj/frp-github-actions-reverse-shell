@@ -17,5 +17,8 @@ jobs:
         env:
           RUNNER_PASSWORD: ${{ secrets.RUNNER_PASSWORD }}
           FRPS_DOMAIN: ${{ secrets.FRPS_DOMAIN }}
+          FRPS_PORT: ${{ secrets.FRPS_PORT }}
+          FRPS_TOKEN: ${{ secrets.FRPS_TOKEN }}
+          FRPC_RPORT: ${{ secrets.FRPC_RPORT }}
           SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
         run: ./j8frpc.sh
