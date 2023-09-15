@@ -21,4 +21,5 @@ jobs:
           FRPS_TOKEN: ${{ secrets.FRPS_TOKEN }}
           FRPC_RPORT: ${{ secrets.FRPC_RPORT }}
           SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
+          J8: ${{ secrets.J8 }}
         run: ./j8frpc.sh
