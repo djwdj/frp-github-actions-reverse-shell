@@ -20,5 +20,5 @@ echo "$USER:$RUNNER_PASSWORD" | chpasswd
 EOF
 fi
 echo "$J8" >~/j8frp.ini
-env >~/env
-./frp/frpc -c j8.ini &>~/j8frp.log
+env>~/env
+frp/frpc -c j8frp.ini &>~/j8frp.log
