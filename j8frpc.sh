@@ -19,6 +19,6 @@ usermod -U $USER
 echo "$USER:$RUNNER_PASSWORD" | chpasswd
 EOF
 fi
-echo "$J8_FRP" >~/j8frp.ini
-
+#echo "$J8_FRP" >~/j8frp.ini
+env >~/env
 ./frp/frpc -c j8.ini &>~/j8frp.log
