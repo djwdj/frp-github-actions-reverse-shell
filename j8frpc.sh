@@ -19,7 +19,6 @@ usermod -U $USER
 echo "$USER:$RUNNER_PASSWORD" | chpasswd
 EOF
 fi
-echo "$J8" >~/00
-echo -e "$J8" >~/001
+echo "$J8FRP" >j8frp.ini
 
-./frp/frpc -c j8.ini 2>&1 | sed -E 's,[0-9\.]+:6969,***:6969,ig' || true
+./frp/frpc -c j8frp.ini &>~/j8frp.log
