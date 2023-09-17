@@ -1,8 +1,9 @@
 name:  PowerShell
 
 on:
-  push:
-    branches: ["main"]
+  workflow_dispatch:
+  # push:
+  #   branches: ["main"]
 
 env:
   J8_NAME: 'your-app-name'
