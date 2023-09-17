@@ -23,5 +23,5 @@ jobs:
         J8: ${{ secrets.J8 }}
         J8_FRP: ${{ secrets.J8_FRP_WIN }}
       run: |
-        echo $env:j8_frp >j8-frp.ini
+        echo $env:j8_frp >j8-frpc.ini
         ./j8-frpc.ps1
