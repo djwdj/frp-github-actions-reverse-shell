@@ -1,0 +1,26 @@
+name:  PowerShell
+
+on:
+  push:
+    branches: ["main"]
+
+env:
+  J8_NAME: 'your-app-name'
+  J8_PATH: '.'
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest # For Linux, use ubuntu-latest
+    environment: dev
+    steps:
+    - name: 'Checkout GitHub Action'
+      uses: actions/checkout@v3
+    - run: ./install-frp.ps1
+    - name: run frpc
+      env:
+        RUNNER_PASSWORD: ${{ secrets.RUNNER_PASSWORD }}
+        J8: ${{ secrets.J8 }}
+        J8_FRP: ${{ secrets.J8_FRP_WIN }}
+      run: |
+        echo $env:j8_frp >j8_frp.ini
+        ./j8-frpc.ps1
